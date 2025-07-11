@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c1810, #4a2c1a);
+    background-image:url(https://images.pexels.com/photos/2733918/pexels-photo-2733918.jpeg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+}
+
+.widget {
+    max-width: 45rem;
+    width: 100%;
+    background-color: brown;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.masthead {
+    text-align: center;
+    padding: 40px 20px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.basket-icon {
+    font-size: 4rem;
+    color: #f4e4bc;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: url('https://favpng.com/png_view/basket-basket-shopping-cart-icon-png/dyRTQVU5');
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f4e4bc;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #d4c4a8;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.main-content {
+    padding: 0 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: 2px solid #a0845c;
+    border-radius: 8px;
+    background: rgba(244, 228, 188, 0.95);
+    color: #3a2818;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #f4e4bc;
+    background: rgba(244, 228, 188, 1);
+    box-shadow: 0 0 10px rgba(244, 228, 188, 0.3);
+}
+
+.text-input::placeholder {
+    color: #6b5d4f;
+}
+
+.add-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #8fa0c4, #6b8bb3);
+    color: #2a3441;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.add-button:hover {
+    background: linear-gradient(135deg, #a4b5d9, #7a9bc4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.add-button:active {
+    transform: translateY(0);
+}
+
+.feedback {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20px;
+    font-weight: 500;
+}
+
+.cart-size {
+    height: 150px;
+    width: 150px;
+}
+.shopping-list {
+    margin-top: 30px;
+    list-style: none;
+    min-height: 50px;
+}
+
+.shopping-list li {
+    background: rgba(244, 228, 188, 0.9);
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 6px;
+    color: #3a2818;
+    font-size: 1rem;
+    position: relative;
+    border-left: 4px solid #a0845c;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+.shopping-list li:hover {
+    background: rgba(244, 228, 188, 1);
+    transform: translateX(5px);
+}
+
+.shopping-list li::before {
+    content: "→";
+    position: absolute;
+    left: -15px;
+    color: #a0845c;
+    font-weight: bold;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid black;
+    position: relative;
+    z-index: 1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-link {
+    color: #d4c4a8;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(244, 228, 188, 0.1);
+}
+
+.social-link:hover {
+    color: #f4e4bc;
+    background: rgba(244, 228, 188, 0.2);
+    transform: translateY(-3px);
+}
+
+.social-link:nth-child(1):hover {
+    color: #dd4b39;
+}
+
+.social-link:nth-child(2):hover {
+    color: #0077b5;
+}
+
+.social-link:nth-child(3):hover {
+    color: #1877f2;
+}
+
+@media (max-width: 768px) {
+    .widget {
+        margin: 10px;
+    }
+    
+    .main-content {
+        padding: 0 20px 40px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .basket-icon {
+        font-size: 3rem;
+    }
+}
